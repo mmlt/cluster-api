@@ -98,6 +98,15 @@
   version = "v3.2.0"
 
 [[projects]]
+  name = "github.com/docker/distribution"
+  packages = [
+    "digest",
+    "reference"
+  ]
+  revision = "48294d928ced5dd9b378f7fd7c6f5da3ff3f2c89"
+  version = "v2.6.2"
+
+[[projects]]
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
@@ -236,6 +245,12 @@
   name = "github.com/google/gofuzz"
   packages = ["."]
   revision = "24818f796faf91cd76ec7bddd72458fbced7a6c1"
+
+[[projects]]
+  name = "github.com/google/uuid"
+  packages = ["."]
+  revision = "064e2069ce9c359c118179501254f67d7d37ba24"
+  version = "0.2"
 
 [[projects]]
   name = "github.com/googleapis/gnostic"
@@ -461,9 +476,43 @@
   version = "v1.1"
 
 [[projects]]
+  name = "github.com/vmware/govmomi"
+  packages = [
+    "find",
+    "list",
+    "lookup",
+    "lookup/methods",
+    "lookup/types",
+    "nfc",
+    "object",
+    "pbm",
+    "pbm/methods",
+    "pbm/types",
+    "property",
+    "session",
+    "sts",
+    "sts/internal",
+    "task",
+    "vim25",
+    "vim25/debug",
+    "vim25/methods",
+    "vim25/mo",
+    "vim25/progress",
+    "vim25/soap",
+    "vim25/types",
+    "vim25/xml"
+  ]
+  revision = "e3a01f9611c32b2362366434bcd671516e78955d"
+  version = "v0.18.0"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
-  packages = ["ssh/terminal"]
+  packages = [
+    "ed25519",
+    "ed25519/internal/edwards25519",
+    "ssh/terminal"
+  ]
   revision = "88942b9c40a4c9d203b82b3731787b672d6e809b"
 
 [[projects]]
@@ -605,6 +654,17 @@
   version = "v1.11.0"
 
 [[projects]]
+  name = "gopkg.in/gcfg.v1"
+  packages = [
+    ".",
+    "scanner",
+    "token",
+    "types"
+  ]
+  revision = "61b2c08bc8f6068f7c5ca684372f9a6cb1c45ebe"
+  version = "v1.2.3"
+
+[[projects]]
   name = "gopkg.in/inf.v0"
   packages = ["."]
   revision = "d2d2541c53f18d2a059457998ce2876cc8e67cbf"
@@ -624,6 +684,23 @@
   packages = ["."]
   revision = "a96e63847dc3c67d17befa69c303767e2f84e54f"
   version = "v2.1"
+
+[[projects]]
+  name = "gopkg.in/square/go-jose.v2"
+  packages = [
+    ".",
+    "cipher",
+    "json",
+    "jwt"
+  ]
+  revision = "76dd09796242edb5b897103a75df2645c028c960"
+  version = "v2.1.6"
+
+[[projects]]
+  name = "gopkg.in/warnings.v0"
+  packages = ["."]
+  revision = "ec4a0fea49c7b46c2aeb0b51aac55779c607e52b"
+  version = "v0.1.2"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
@@ -666,6 +743,12 @@
     "storage/v1beta1"
   ]
   revision = "c6c40fa5f71e46739e69d43b8ce08fad9720bab9"
+
+[[projects]]
+  branch = "master"
+  name = "k8s.io/apiextensions-apiserver"
+  packages = ["pkg/features"]
+  revision = "926207d3f23130ee823e4e723686691fdcaf1bd8"
 
 [[projects]]
   branch = "release-1.9"
@@ -979,6 +1062,7 @@
     "util/homedir",
     "util/integer",
     "util/jsonpath",
+    "util/retry",
     "util/workqueue"
   ]
   revision = "90539b4e75a8daaf7f67c3874c6180bfb1a63936"
@@ -1024,9 +1108,54 @@
   ]
   revision = "50ae88d24ede7b8bad68e23c805b5d3da5c8abaf"
 
+[[projects]]
+  name = "k8s.io/kubernetes"
+  packages = [
+    "pkg/api/legacyscheme",
+    "pkg/api/service",
+    "pkg/api/v1/pod",
+    "pkg/apis/autoscaling",
+    "pkg/apis/core",
+    "pkg/apis/core/helper",
+    "pkg/apis/core/install",
+    "pkg/apis/core/pods",
+    "pkg/apis/core/v1",
+    "pkg/apis/core/v1/helper",
+    "pkg/apis/core/validation",
+    "pkg/apis/extensions",
+    "pkg/apis/networking",
+    "pkg/apis/policy",
+    "pkg/apis/scheduling",
+    "pkg/capabilities",
+    "pkg/cloudprovider",
+    "pkg/cloudprovider/providers/vsphere/vclib",
+    "pkg/cloudprovider/providers/vsphere/vclib/diskmanagers",
+    "pkg/controller",
+    "pkg/features",
+    "pkg/fieldpath",
+    "pkg/kubelet/types",
+    "pkg/master/ports",
+    "pkg/scheduler/algorithm",
+    "pkg/scheduler/algorithm/priorities/util",
+    "pkg/scheduler/api",
+    "pkg/scheduler/cache",
+    "pkg/scheduler/util",
+    "pkg/security/apparmor",
+    "pkg/serviceaccount",
+    "pkg/util/file",
+    "pkg/util/hash",
+    "pkg/util/net/sets",
+    "pkg/util/parsers",
+    "pkg/util/pointer",
+    "pkg/util/taints",
+    "pkg/util/version"
+  ]
+  revision = "91e7b4fd31fcd3d5f436da26c980becec37ceefe"
+  version = "v1.11.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "40cbed3bd870f59d6c28ecaaa706e5aab9d974a8b52a410e89442a1e522962c6"
+  inputs-digest = "a9ec95af9503432cbfb37f258a87084dc51b44beb85486e9f48f561aca10a0a1"
   solver-name = "gps-cdcl"
   solver-version = 1
